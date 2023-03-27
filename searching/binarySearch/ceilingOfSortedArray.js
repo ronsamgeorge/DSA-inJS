@@ -5,6 +5,11 @@
 const ceiling = (arr, s, e, target) => {
   let result = Math.max() * -1;
 
+  // check if array actually has a number greater than/equal to target
+  if (target > arr[arr.length - 1]) {
+    return "No greater numbert than target";
+  }
+
   while (s <= e) {
     let mid = Math.floor((s + e) / 2);
 
@@ -29,6 +34,8 @@ const ceiling = (arr, s, e, target) => {
       }
     }
   }
+
+  // a more efficient way would have been to return the s counter since it will be the least greatest number after target, when the loop breaks
   return result;
 };
 
