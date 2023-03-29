@@ -2,6 +2,14 @@
 
 // the matrix (n x n) is sorted in row and column manner
 
+// Brute force way would be to linear search all the element, leading to O(n^2) complexity
+
+// Optimal way : All compare with the top right element with the index, and reduce the search space depending on the comparison
+
+// if Target is smaller than value, then reduce the column since all elements will be larger than value,  else reduce row as all element will be smaller on that row before the value element
+
+// O(n) solution
+
 const search = (num, target) => {
   let rowIndex = 0;
   let columnIndex = num.length - 1;
