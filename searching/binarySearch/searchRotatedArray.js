@@ -7,6 +7,8 @@
 // The problem can be divied into two major parts:
 // 1. Finding the pivot  2. search both parts of the array using binary search.
 
+// This will not work with duplicate values
+
 var search = function (nums, target) {
   const pivot = findPivot(nums);
   let ans = binarySearch(nums, target, 0, pivot);
