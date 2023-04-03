@@ -1,3 +1,5 @@
+// https://leetcode.com/problems/valid-perfect-square/description/
+
 // brute force way would be to start search if squares of current element is less or equal to num : O(N);
 // Optimal approach would be to use Binary search between 1 to num, if mid^2 is smaller or greater, adjust search range,
 
