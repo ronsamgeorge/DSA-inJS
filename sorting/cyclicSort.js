@@ -1,5 +1,7 @@
 // pattern : when given numbers of range 1 to n in array of length n
 
+// time complexity : O(n) , space complexity : O(1)
+
 const cyclicSort = (arr) => {
   let i = 0;
   while (i < arr.length) {
