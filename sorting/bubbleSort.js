@@ -25,6 +25,6 @@ const bubbleSort = (arr) => {
   return arr;
 };
 
-const arr = [5, 4, 3, 2, 1];
+const arr = [3, 2, 1, 4];
 console.log("initial : ", arr);
 console.log("final : ", bubbleSort(arr));
