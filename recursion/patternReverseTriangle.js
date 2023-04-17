@@ -15,8 +15,8 @@ const printPattern = (row, column, pattern) => {
   }
 
   if (row === column) {
-    console.log(pattern);
     printPattern(row - 1, 0, "");
+    console.log(pattern);
   } else {
     printPattern(row, column + 1, pattern + "* ");
   }
