@@ -13,4 +13,19 @@ const removeAnAlphabet = (str, character, currentIndex, result) => {
   return removeAnAlphabet(str, character, currentIndex + 1, result);
 };
 
-console.log(removeAnAlphabet("abbaba", "a", 0, ""));
+// without taking a result variable in the function calls
+const removeAlphabet = (str, ch) => {
+  if (str === "") {
+    return "";
+  }
+
+  console.log(str[0]);
+  if (str[0] !== ch) {
+    return str[0] + removeAlphabet(str.slice(1), ch);
+  } else {
+    return "" + removeAlphabet(str.slice(1), ch);
+  }
+};
+
+console.log(removeAnAlphabet("baccad", "a", 0, ""));
+console.log(removeAlphabet("baccad", "a"));
