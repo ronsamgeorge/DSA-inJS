@@ -4,8 +4,6 @@ const pathMatrix = (matrix, row, col, step, res) => {
     res[row][col] = step
     console.log(res)
     console.log('\n')
-
-    res[row][col] = 0
     return
   }
 
