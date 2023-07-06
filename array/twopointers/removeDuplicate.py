@@ -1,5 +1,5 @@
 # uses the two pointer method: slow and fast
-#
+# Hint of using two pointers? was a sorted array, had to work with pairs in a way
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
