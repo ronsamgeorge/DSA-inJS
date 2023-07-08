@@ -93,6 +93,28 @@ class LL:
         temp.next = None
         self.size -= 1
 
+    def delete_at_index(self, index):
+        if index == 0:
+            self.delete_head()
+            return
+        if index == self.size - 1:
+            self.delete_tail()
+            return
+
+        temp = self.head
+        count = 1
+        prev = self.head
+
+        while count <= index:
+            prev = temp
+            temp = temp.next
+            count += 1
+
+        prev.next = temp.next
+        temp.next = None
+        self.size -= 1
+        return
+
 
 linkedList = LL()
 
@@ -105,9 +127,6 @@ linkedList.insert_at_index(3, 2)
 linkedList.printList()
 linkedList.insert_at_index(5, 3)
 linkedList.printList()
-linkedList.delete_head()
-linkedList.printList()
-linkedList.delete_tail()
-linkedList.printList()
-linkedList.delete_tail()
+
+linkedList.delete_at_index(2)
 linkedList.printList()
