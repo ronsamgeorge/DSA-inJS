@@ -7,7 +7,7 @@
 # use the TWO POINTER Method since the linked list is sorted
 # TWO POINTER : slow and fast pointer
 class Solution:
-    def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def deleteDuplicates(self, head):
 
         if head == None:
             return head

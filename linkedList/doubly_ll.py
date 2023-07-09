@@ -30,6 +30,42 @@ class LinkedList:
         self.tail = node
         self.size += 1
 
+    def add_at_head(self, val):
+        node = Node(val)
+
+        temp = self.head
+        node.next = temp
+        self.head = node
+        self.size += 1
+
+    def add_at_index(self, val, index):
+
+        if index == 0:
+            self.add_at_head(val)
+            return
+
+        if index == self.size:
+            self.add_node(val)
+            return
+
+        new_node = Node(val)
+        lastNode = self.head
+        curr = self.head.next
+        count = 1
+
+        while count != index:
+            lastNode = curr
+            curr = curr.next
+            count += 1
+
+        new_node.next = curr
+        new_node.prev = lastNode
+
+        curr.prev = new_node
+        lastNode.next = new_node
+
+        self.size += 1
+
     def print_list(self):
         temp_node = self.head
 
@@ -52,6 +88,12 @@ class LinkedList:
 ll = LinkedList()
 ll.add_node(1)
 ll.add_node(2)
+ll.add_node(3)
 print(ll.head.val)
 print(ll.tail.val)
-ll.print_from_tail()
+ll.print_list()
+
+ll.add_at_index(10, 2)
+ll.print_list()
+ll.add_at_index(20, 4)
+ll.print_list()
