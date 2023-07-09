@@ -49,20 +49,18 @@ class LinkedList:
             return
 
         new_node = Node(val)
-        lastNode = self.head
         curr = self.head.next
         count = 1
 
         while count != index:
-            lastNode = curr
             curr = curr.next
             count += 1
 
         new_node.next = curr
-        new_node.prev = lastNode
+        new_node.prev = curr.prev
 
+        curr.prev.next = new_node
         curr.prev = new_node
-        lastNode.next = new_node
 
         self.size += 1
 
@@ -95,5 +93,5 @@ ll.print_list()
 
 ll.add_at_index(10, 2)
 ll.print_list()
-ll.add_at_index(20, 4)
+ll.add_at_index(20, 3)
 ll.print_list()
