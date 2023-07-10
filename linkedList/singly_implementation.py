@@ -115,18 +115,42 @@ class LL:
         self.size -= 1
         return
 
+    # add node at index using recursion
+
+    def add_index_recur(self, val, index):
+        temp = self.head
+        self.head = self.recursive_node(temp, index, val)
+
+    def recursive_node(self, curr, index, val):
+
+        # end of the LL (index out of bound check)
+        if curr == None:
+            return None
+
+        # at the node where the new node should be inserted
+        if (index == 0):
+            node = Node(val)
+            node.next = curr
+            return node
+
+        curr.next = self.recursive_node(curr.next, index-1, val)
+        return curr
+
 
 linkedList = LL()
 
-linkedList.addNode("1")
-linkedList.addNode("2")
-linkedList.addNode("4")
-
-print(linkedList.size)
-linkedList.insert_at_index(3, 2)
+linkedList.addNode(1)
+linkedList.addNode(2)
+linkedList.addNode(3)
+linkedList.addNode(4)
 linkedList.printList()
-linkedList.insert_at_index(5, 3)
-linkedList.printList()
+linkedList.add_index_recur(0, 8)
 
-linkedList.delete_at_index(2)
+# print(linkedList.size)
+# linkedList.insert_at_index(3, 2)
+# linkedList.printList()
+# linkedList.insert_at_index(5, 3)
+# linkedList.printList()
+
+# linkedList.delete_at_index(2)
 linkedList.printList()
