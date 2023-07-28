@@ -1,6 +1,6 @@
 # https://leetcode.com/problems/binary-search
 class Solution:
-    def search(self, nums: List[int], target: int) -> int:
+    def search(self, nums, target: int) -> int:
         return self.binarySearch(nums, target, 0, len(nums)-1)
 
     def binarySearch(self, nums, target, start, end):
